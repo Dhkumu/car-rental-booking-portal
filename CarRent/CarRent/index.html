@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renta — Find Your Perfect Rental Car</title>
+<meta name="description" content="Renta is a car rental booking portal with best prices, flexible pickup and no hidden fees.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="index.html" class="brand">Renta<span class="dot">.</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="about.html#locations">Locations</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-outline btn-sm">Sign in</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Car Rent Booking Portal</span>
+      <h1>Find your<br>perfect rental car</h1>
+      <p class="lede">Best prices, flexible pickup, no hidden fees. Compare economy, SUV, luxury and van rentals across 40+ cities.</p>
+      <div class="hero-cta">
+        <a href="cars.html" class="btn btn-primary">Browse cars</a>
+        <a href="about.html" class="btn btn-dark">How it works</a>
+      </div>
+    </div>
+    <div class="hero-car" aria-hidden="true">
+      <svg viewBox="0 0 260 160" class="car-shape">
+        <ellipse cx="130" cy="140" rx="120" ry="10" fill="#000" opacity=".25"/>
+        <path d="M20 110 Q30 60 70 55 L95 40 Q130 30 165 40 L195 55 Q235 60 240 110 Z" fill="#F2A340"/>
+        <rect x="15" y="100" width="230" height="26" rx="10" fill="#F2A340"/>
+        <path d="M100 45 L120 60 L100 60 Z" fill="#1B2430" opacity=".15"/>
+        <circle cx="70" cy="128" r="20" fill="#1B2430"/>
+        <circle cx="70" cy="128" r="8" fill="#F7F4EC"/>
+        <circle cx="190" cy="128" r="20" fill="#1B2430"/>
+        <circle cx="190" cy="128" r="8" fill="#F7F4EC"/>
+        <rect x="95" y="50" width="70" height="30" rx="6" fill="#1B2430" opacity=".85"/>
+      </svg>
+    </div>
+  </div>
+  <div class="road-anim" aria-hidden="true"></div>
+  <div class="road-car" aria-hidden="true">
+    <svg viewBox="0 0 64 30" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="32" cy="27" rx="27" ry="2.5" fill="#000" opacity=".25"/>
+      <path d="M4 20 Q7 9 18 8 L25 4 Q32 1 39 4 L46 8 Q57 9 60 20 Z" fill="var(--amber)"/>
+      <rect x="2" y="17" width="60" height="7" rx="3.5" fill="var(--amber)"/>
+      <rect x="24" y="7" width="17" height="8" rx="2" fill="var(--asphalt)" opacity=".85"/>
+      <circle cx="16" cy="23" r="5" fill="var(--asphalt)"/>
+      <circle cx="16" cy="23" r="2" fill="var(--cream)"/>
+      <circle cx="48" cy="23" r="5" fill="var(--asphalt)"/>
+      <circle cx="48" cy="23" r="2" fill="var(--cream)"/>
+    </svg>
+  </div>
+</section>
+
+<div class="container">
+  <form class="search-card" data-validate>
+    <div class="field">
+      <label for="pickup-location">📍 Pickup location</label>
+      <select id="pickup-location" required>
+        <option value="">Select city</option>
+        <option>Kathmandu</option>
+        <option>Pokhara</option>
+        <option>Chitwan</option>
+        <option>Biratnagar</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="home-pickup-date">Pickup date</label>
+      <input type="date" id="home-pickup-date" required>
+    </div>
+    <div class="field">
+      <label for="home-return-date">Return date</label>
+      <input type="date" id="home-return-date" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+    <div class="form-msg"></div>
+  </form>
+</div>
+
+<section id="categories">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Browse by category</span>
+        <h2>Pick the right car for your trip</h2>
+      </div>
+    </div>
+    <div class="category-grid">
+      <a href="cars.html?type=economy" class="plate" data-code="ECO-01">
+        <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="12" width="36" height="12" rx="4"/><circle cx="15" cy="26" r="3"/><circle cx="33" cy="26" r="3"/><path d="M12 12 L18 5 H30 L36 12"/></svg>
+        <span>Economy</span>
+      </a>
+      <a href="cars.html?type=suv" class="plate" data-code="SUV-02">
+        <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="9" width="40" height="15" rx="4"/><circle cx="14" cy="26" r="3"/><circle cx="34" cy="26" r="3"/><path d="M10 9 L14 3 H34 L38 9"/></svg>
+        <span>SUV</span>
+      </a>
+      <a href="cars.html?type=luxury" class="plate" data-code="LUX-03">
+        <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="13" width="38" height="10" rx="5"/><circle cx="15" cy="26" r="3"/><circle cx="33" cy="26" r="3"/><path d="M12 13 L20 6 H28 L36 13"/></svg>
+        <span>Luxury</span>
+      </a>
+      <a href="cars.html?type=van" class="plate" data-code="VAN-04">
+        <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="6" width="40" height="18" rx="3"/><circle cx="14" cy="26" r="3"/><circle cx="34" cy="26" r="3"/><line x1="24" y1="6" x2="24" y2="24"/></svg>
+        <span>Van</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="lane-divider"></div></div>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Fleet highlights</span>
+        <h2>Featured vehicles</h2>
+      </div>
+      <a href="cars.html" class="btn btn-outline btn-sm">View all cars</a>
+    </div>
+    <div class="car-grid">
+      <article class="car-card">
+        <figure>
+          <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="12" width="36" height="12" rx="4"/><circle cx="15" cy="26" r="3"/><circle cx="33" cy="26" r="3"/><path d="M12 12 L18 5 H30 L36 12"/></svg>
+        </figure>
+        <div class="body">
+          <div class="row"><h3>Toyota Corolla</h3><span class="price">$45<small>/day</small></span></div>
+          <div class="tag-row"><span class="tag">5 seats</span><span class="tag">Petrol</span><span class="tag">Auto</span></div>
+          <a href="car-detail.html" class="btn btn-dark btn-block">View details</a>
+        </div>
+      </article>
+      <article class="car-card">
+        <figure>
+          <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="9" width="40" height="15" rx="4"/><circle cx="14" cy="26" r="3"/><circle cx="34" cy="26" r="3"/><path d="M10 9 L14 3 H34 L38 9"/></svg>
+        </figure>
+        <div class="body">
+          <div class="row"><h3>Honda CR-V</h3><span class="price">$68<small>/day</small></span></div>
+          <div class="tag-row"><span class="tag">5 seats</span><span class="tag">Hybrid</span><span class="tag">Auto</span></div>
+          <a href="car-detail.html" class="btn btn-dark btn-block">View details</a>
+        </div>
+      </article>
+      <article class="car-card">
+        <figure>
+          <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="13" width="38" height="10" rx="5"/><circle cx="15" cy="26" r="3"/><circle cx="33" cy="26" r="3"/><path d="M12 13 L20 6 H28 L36 13"/></svg>
+        </figure>
+        <div class="body">
+          <div class="row"><h3>BMW 5 Series</h3><span class="price">$92<small>/day</small></span></div>
+          <div class="tag-row"><span class="tag">5 seats</span><span class="tag">Petrol</span><span class="tag">Auto</span></div>
+          <a href="car-detail.html" class="btn btn-dark btn-block">View details</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--asphalt-3);">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Process</span>
+        <h2>How renting works</h2>
+      </div>
+    </div>
+    <ol class="steps">
+      <li class="step"><span class="num">01 / Search</span><h3>Pick location &amp; dates</h3><p>Tell us where and when — we'll show what's available nearby.</p></li>
+      <li class="step"><span class="num">02 / Choose</span><h3>Compare vehicles</h3><p>Filter by type, price and transmission to find the right fit.</p></li>
+      <li class="step"><span class="num">03 / Book</span><h3>Confirm &amp; pay</h3><p>Secure your booking with card, wallet or pay on pickup.</p></li>
+      <li class="step"><span class="num">04 / Drive</span><h3>Pick up the keys</h3><p>Show your license at the counter and hit the road.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Reviews</span>
+        <h2>What renters say</h2>
+      </div>
+    </div>
+    <div class="testimonial-track">
+      <blockquote class="testimonial active">
+        <p>"Booking took two minutes and the SUV was exactly as pictured. No surprise fees at pickup."</p>
+        <p class="who">— Sarita K., Kathmandu</p>
+      </blockquote>
+      <blockquote class="testimonial">
+        <p>"I compared three companies — Renta had the clearest pricing table, so it was an easy choice."</p>
+        <p class="who">— Amit R., Pokhara</p>
+      </blockquote>
+      <blockquote class="testimonial">
+        <p>"Support answered a change-of-date request within minutes. Would rent again."</p>
+        <p class="who">— Nisha T., Biratnagar</p>
+      </blockquote>
+    </div>
+    <div class="dots">
+      <button class="active" aria-label="Show review 1"></button>
+      <button aria-label="Show review 2"></button>
+      <button aria-label="Show review 3"></button>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand">Renta<span class="dot">.</span></a>
+        <p style="margin-top:12px; max-width:34ch; color:#9AA2AD;">A car rental booking portal built for the assignment brief — clear pricing, simple booking, no hidden fees.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="cars.html">Browse cars</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="about.html#locations">Locations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <ul>
+          <li><a href="login.html">Sign in</a></li>
+          <li><a href="register.html">Create account</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Renta Car Rentals. All rights reserved.</span>
+      <span>Privacy · Terms · Support</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

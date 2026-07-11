@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toyota Corolla — Renta</title>
+<meta name="description" content="View specs, photos and pricing for the Toyota Corolla, then book your rental in minutes.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="index.html" class="brand">Renta<span class="dot">.</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cars.html" aria-current="page">Cars</a></li>
+        <li><a href="about.html#locations">Locations</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-outline btn-sm">Sign in</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section style="padding-block:30px 0;">
+  <div class="container">
+    <p style="font-family:var(--font-mono); font-size:.8rem; color:var(--ink-soft);">
+      <a href="cars.html" style="color:var(--ink-soft);">Cars</a> / <span style="color:var(--asphalt);">Toyota Corolla</span>
+    </p>
+  </div>
+</section>
+
+<section style="padding-block:20px 64px;">
+  <div class="container booking-shell">
+
+    <div>
+      <div class="car-card" style="margin-bottom:26px;">
+        <figure style="padding:50px 20px;">
+          <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2" style="width:220px;"><rect x="6" y="12" width="36" height="12" rx="4"/><circle cx="15" cy="26" r="3"/><circle cx="33" cy="26" r="3"/><path d="M12 12 L18 5 H30 L36 12"/></svg>
+        </figure>
+      </div>
+
+      <span class="eyebrow">Economy · Sedan</span>
+      <div class="row" style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:10px;">
+        <h1 style="font-size:2.1rem;">Toyota Corolla</h1>
+        <span class="badge badge-complete">Available now</span>
+      </div>
+      <p class="lede" style="margin-top:10px;">A dependable, fuel-efficient sedan that's easy to park and comfortable for city driving or longer highway trips alike.</p>
+
+      <div class="tag-row" style="margin-top:18px;">
+        <span class="tag">5 seats</span>
+        <span class="tag">Petrol</span>
+        <span class="tag">Automatic</span>
+        <span class="tag">2 bags</span>
+        <span class="tag">A/C</span>
+      </div>
+
+      <div class="lane-divider dark" style="margin-block:34px;"></div>
+
+      <div class="grid-2">
+        <div>
+          <h3 style="margin-bottom:14px;">Specifications</h3>
+          <div class="table-wrap">
+            <table>
+              <tbody>
+                <tr><th>Transmission</th><td>Automatic</td></tr>
+                <tr><th>Fuel type</th><td>Petrol</td></tr>
+                <tr><th>Seats</th><td>5</td></tr>
+                <tr><th>Luggage</th><td>2 large bags</td></tr>
+                <tr><th>Mileage</th><td>18 km/l</td></tr>
+                <tr><th>Model year</th><td>2024</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin-bottom:14px;">Included with every rental</h3>
+          <ul style="display:flex; flex-direction:column; gap:10px;">
+            <li style="color:var(--ink-soft); font-size:.92rem;">✔ Third-party insurance</li>
+            <li style="color:var(--ink-soft); font-size:.92rem;">✔ Unlimited mileage</li>
+            <li style="color:var(--ink-soft); font-size:.92rem;">✔ 24/7 roadside assistance</li>
+            <li style="color:var(--ink-soft); font-size:.92rem;">✔ Free cancellation up to 24h before pickup</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <aside>
+      <div class="summary-box" style="margin-bottom:20px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:16px;">
+          <span style="font-family:var(--font-mono); font-size:.8rem; color:#A9B0BC;">Daily rate</span>
+          <span style="font-family:var(--font-mono); font-size:1.3rem; font-weight:700; color:var(--amber);">$45</span>
+        </div>
+
+        <form action="payment.html" method="get">
+          <input type="hidden" id="daily-rate" value="45">
+
+          <div class="form-group" style="margin-bottom:14px;">
+            <label for="pickup-location-detail" style="color:#C9CFD8;">Pickup location</label>
+            <select id="pickup-location-detail" required>
+              <option value="">Select city</option>
+              <option>Kathmandu</option>
+              <option>Pokhara</option>
+              <option>Chitwan</option>
+              <option>Biratnagar</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom:14px;">
+            <label for="pickup-date" style="color:#C9CFD8;">Pickup date</label>
+            <input type="date" id="pickup-date" required>
+          </div>
+
+          <div class="form-group" style="margin-bottom:14px;">
+            <label for="return-date" style="color:#C9CFD8;">Return date</label>
+            <input type="date" id="return-date" required>
+          </div>
+
+          <dl style="margin-top:20px;">
+            <dt>Rental length</dt>
+            <dd><span id="rental-days">0</span> days</dd>
+            <dt class="total">Estimated total</dt>
+            <dd class="total" id="rental-total">$0.00</dd>
+          </dl>
+
+          <button type="submit" class="btn btn-primary btn-block" style="margin-top:20px;">Continue to payment</button>
+        </form>
+      </div>
+
+      <div class="filter-box">
+        <h4>Need a different fit?</h4>
+        <p style="color:var(--ink-soft); font-size:.88rem; margin-bottom:14px;">Compare seats, price and fuel type across the full fleet.</p>
+        <a href="cars.html" class="btn btn-outline btn-block">Browse all cars</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div class="container"><div class="lane-divider dark"></div></div>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">You might also like</span>
+        <h2>Similar vehicles</h2>
+      </div>
+      <a href="cars.html" class="btn btn-outline btn-sm">View all cars</a>
+    </div>
+    <div class="car-grid">
+      <article class="car-card">
+        <figure><svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="12" width="36" height="12" rx="4"/><circle cx="15" cy="26" r="3"/><circle cx="33" cy="26" r="3"/><path d="M12 12 L18 5 H30 L36 12"/></svg></figure>
+        <div class="body">
+          <div class="row"><h3>Hyundai i10</h3><span class="price">$38<small>/day</small></span></div>
+          <div class="tag-row"><span class="tag">4 seats</span><span class="tag">Petrol</span><span class="tag">Manual</span></div>
+          <a href="car-detail.html" class="btn btn-dark btn-block">View details</a>
+        </div>
+      </article>
+      <article class="car-card">
+        <figure><svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="9" width="40" height="15" rx="4"/><circle cx="14" cy="26" r="3"/><circle cx="34" cy="26" r="3"/><path d="M10 9 L14 3 H34 L38 9"/></svg></figure>
+        <div class="body">
+          <div class="row"><h3>Jeep Compass</h3><span class="price">$71<small>/day</small></span></div>
+          <div class="tag-row"><span class="tag">5 seats</span><span class="tag">Diesel</span><span class="tag">Auto</span></div>
+          <a href="car-detail.html" class="btn btn-dark btn-block">View details</a>
+        </div>
+      </article>
+      <article class="car-card">
+        <figure><svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="9" width="40" height="15" rx="4"/><circle cx="14" cy="26" r="3"/><circle cx="34" cy="26" r="3"/><path d="M10 9 L14 3 H34 L38 9"/></svg></figure>
+        <div class="body">
+          <div class="row"><h3>Honda CR-V</h3><span class="price">$68<small>/day</small></span></div>
+          <div class="tag-row"><span class="tag">5 seats</span><span class="tag">Hybrid</span><span class="tag">Auto</span></div>
+          <a href="car-detail.html" class="btn btn-dark btn-block">View details</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Renta Car Rentals. All rights reserved.</span>
+      <span>Privacy · Terms · Support</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

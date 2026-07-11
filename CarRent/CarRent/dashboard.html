@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dashboard — Renta</title>
+<meta name="description" content="Manage your bookings, view receipts and rebook your favorite cars.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="index.html" class="brand">Renta<span class="dot">.</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="about.html#locations">Locations</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="dashboard.html" class="btn btn-outline btn-sm" aria-current="page">My account</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section style="padding-block:36px 0;">
+  <div class="container" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
+    <div>
+      <span class="eyebrow">Welcome back</span>
+      <h1 style="font-size:2.1rem;">Sarita's dashboard</h1>
+      <p class="lede">Track your active rentals, past trips and saved cars in one place.</p>
+    </div>
+    <a href="cars.html" class="btn btn-primary">Book a new car</a>
+  </div>
+</section>
+
+<section style="padding-top:26px;">
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="num" data-count-to="1" data-prefix="">0</div>
+        <div class="label">Active booking</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" data-count-to="14" data-prefix="">0</div>
+        <div class="label">Trips completed</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" data-count-to="612" data-prefix="$">0</div>
+        <div class="label">Total spent</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" data-count-to="3" data-prefix="">0</div>
+        <div class="label">Saved vehicles</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Current rental</span>
+        <h2>Active booking</h2>
+      </div>
+    </div>
+
+    <div class="car-card" style="display:grid; grid-template-columns:160px 1fr auto; align-items:center; gap:24px; padding:20px;">
+      <figure style="margin:0;">
+        <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="12" width="36" height="12" rx="4"/><circle cx="15" cy="26" r="3"/><circle cx="33" cy="26" r="3"/><path d="M12 12 L18 5 H30 L36 12"/></svg>
+      </figure>
+      <div>
+        <div class="row"><h3>Toyota Corolla</h3><span class="badge badge-progress">In progress</span></div>
+        <p style="color:var(--ink-soft); font-size:.88rem; margin-top:6px;">Kathmandu · Jul 14 – Jul 17, 2026 · Booking #RC-48213</p>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <a href="car-detail.html" class="btn btn-outline btn-sm">View</a>
+        <button class="btn btn-dark btn-sm">Cancel</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">History</span>
+        <h2>Past bookings</h2>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Booking</th><th>Vehicle</th><th>Dates</th><th>Total</th><th>Status</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#RC-48213</td>
+            <td>Toyota Corolla</td>
+            <td>Jul 14 – Jul 17, 2026</td>
+            <td>$135.00</td>
+            <td><span class="badge badge-progress">In progress</span></td>
+            <td><a href="car-detail.html" style="color:var(--amber-dark); font-weight:700; font-size:.85rem;">View</a></td>
+          </tr>
+          <tr>
+            <td>#RC-47810</td>
+            <td>Honda CR-V</td>
+            <td>Jun 2 – Jun 5, 2026</td>
+            <td>$204.00</td>
+            <td><span class="badge badge-complete">Completed</span></td>
+            <td><a href="car-detail.html" style="color:var(--amber-dark); font-weight:700; font-size:.85rem;">Rebook</a></td>
+          </tr>
+          <tr>
+            <td>#RC-46590</td>
+            <td>Hyundai i10</td>
+            <td>Apr 20 – Apr 22, 2026</td>
+            <td>$76.00</td>
+            <td><span class="badge badge-complete">Completed</span></td>
+            <td><a href="car-detail.html" style="color:var(--amber-dark); font-weight:700; font-size:.85rem;">Rebook</a></td>
+          </tr>
+          <tr>
+            <td>#RC-45188</td>
+            <td>BMW 5 Series</td>
+            <td>Feb 11 – Feb 13, 2026</td>
+            <td>$184.00</td>
+            <td><span class="badge badge-cancelled">Cancelled</span></td>
+            <td><a href="car-detail.html" style="color:var(--amber-dark); font-weight:700; font-size:.85rem;">Rebook</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--asphalt-3);">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Favorites</span>
+        <h2>Saved vehicles</h2>
+      </div>
+      <a href="cars.html" class="btn btn-outline btn-sm">Browse more</a>
+    </div>
+    <div class="car-grid">
+      <article class="car-card">
+        <figure><svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="13" width="38" height="10" rx="5"/><circle cx="15" cy="26" r="3"/><circle cx="33" cy="26" r="3"/><path d="M12 13 L20 6 H28 L36 13"/></svg></figure>
+        <div class="body">
+          <div class="row"><h3>BMW 5 Series</h3><span class="price">$92<small>/day</small></span></div>
+          <div class="tag-row"><span class="tag">5 seats</span><span class="tag">Petrol</span><span class="tag">Auto</span></div>
+          <a href="car-detail.html" class="btn btn-dark btn-block">Book again</a>
+        </div>
+      </article>
+      <article class="car-card">
+        <figure><svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="9" width="40" height="15" rx="4"/><circle cx="14" cy="26" r="3"/><circle cx="34" cy="26" r="3"/><path d="M10 9 L14 3 H34 L38 9"/></svg></figure>
+        <div class="body">
+          <div class="row"><h3>Honda CR-V</h3><span class="price">$68<small>/day</small></span></div>
+          <div class="tag-row"><span class="tag">5 seats</span><span class="tag">Hybrid</span><span class="tag">Auto</span></div>
+          <a href="car-detail.html" class="btn btn-dark btn-block">Book again</a>
+        </div>
+      </article>
+      <article class="car-card">
+        <figure><svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="12" width="36" height="12" rx="4"/><circle cx="15" cy="26" r="3"/><circle cx="33" cy="26" r="3"/><path d="M12 12 L18 5 H30 L36 12"/></svg></figure>
+        <div class="body">
+          <div class="row"><h3>Toyota Corolla</h3><span class="price">$45<small>/day</small></span></div>
+          <div class="tag-row"><span class="tag">5 seats</span><span class="tag">Petrol</span><span class="tag">Auto</span></div>
+          <a href="car-detail.html" class="btn btn-dark btn-block">Book again</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Account</span>
+        <h2>Profile settings</h2>
+      </div>
+    </div>
+    <div class="form-shell wide" style="margin:0;">
+      <form data-validate data-success-msg="Profile updated successfully.">
+        <div class="form-msg"></div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="dash-name">Full name</label>
+            <input type="text" id="dash-name" name="fullname" value="Sarita Karki" required>
+          </div>
+          <div class="form-group">
+            <label for="dash-email">Email address</label>
+            <input type="email" id="dash-email" name="email" value="sarita.k@example.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="dash-license">Driver's license number</label>
+          <input type="text" id="dash-license" name="license" value="03-021-04487" required>
+        </div>
+        <button type="submit" class="btn btn-dark">Save changes</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Renta Car Rentals. All rights reserved.</span>
+      <span>Privacy · Terms · Support</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

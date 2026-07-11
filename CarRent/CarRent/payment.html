@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment — Renta</title>
+<meta name="description" content="Complete your booking securely with card, wallet or pay on pickup.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="index.html" class="brand">Renta<span class="dot">.</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="about.html#locations">Locations</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-outline btn-sm">Sign in</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section style="padding-block:30px 0;">
+  <div class="container">
+    <p style="font-family:var(--font-mono); font-size:.8rem; color:var(--ink-soft);">
+      <a href="cars.html" style="color:var(--ink-soft);">Cars</a> /
+      <a href="car-detail.html" style="color:var(--ink-soft);">Toyota Corolla</a> /
+      <span style="color:var(--asphalt);">Payment</span>
+    </p>
+  </div>
+</section>
+
+<section style="padding-block:20px 70px;">
+  <div class="container">
+
+    <div class="text-center" style="margin-bottom:34px;">
+      <span class="eyebrow">Step 2 of 2</span>
+      <h1 style="font-size:2.1rem;">Complete your booking</h1>
+      <p class="lede" style="margin-inline:auto;">Choose how you'd like to pay. Your card details are encrypted and never stored on our servers.</p>
+    </div>
+
+    <div class="booking-shell">
+
+      <div>
+        <div class="form-shell wide" style="margin:0;">
+          <form data-validate data-success-msg="Payment confirmed! A receipt has been sent to your email.">
+            <div class="form-msg"></div>
+
+            <h3 style="margin-bottom:16px;">Payment method</h3>
+
+            <div class="radio-option">
+              <input type="radio" name="payment-method" id="pay-card" value="card" checked>
+              <label for="pay-card" style="margin:0;">Credit or debit card</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="payment-method" id="pay-wallet" value="wallet">
+              <label for="pay-wallet" style="margin:0;">Mobile wallet (eSewa / Khalti)</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="payment-method" id="pay-pickup" value="pickup">
+              <label for="pay-pickup" style="margin:0;">Pay on pickup</label>
+            </div>
+
+            <div id="card-details" style="margin-top:22px;">
+              <div class="form-group">
+                <label for="card-name">Name on card</label>
+                <input type="text" id="card-name" name="card-name" placeholder="Full name as shown on card" required>
+              </div>
+              <div class="form-group">
+                <label for="card-number">Card number</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 1234 1234 1234" inputmode="numeric" maxlength="19" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="card-expiry">Expiry date</label>
+                  <input type="text" id="card-expiry" name="card-expiry" placeholder="MM / YY" required>
+                </div>
+                <div class="form-group">
+                  <label for="card-cvc">CVC</label>
+                  <input type="text" id="card-cvc" name="card-cvc" placeholder="123" inputmode="numeric" maxlength="4" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="check-row">
+              <input type="checkbox" id="pay-agree" name="agree" required>
+              <label for="pay-agree">I agree to the rental terms and cancellation policy</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Confirm and pay $135.00</button>
+
+            <p style="text-align:center; margin-top:16px; font-size:.8rem; color:var(--ink-soft); font-family:var(--font-mono);">
+              🔒 Secured checkout · SSL encrypted
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <aside>
+        <div class="summary-box">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:18px; padding-bottom:18px; border-bottom:1px dashed #47536270;">
+            <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2" style="width:56px; color:var(--amber); flex-shrink:0;"><rect x="6" y="12" width="36" height="12" rx="4"/><circle cx="15" cy="26" r="3"/><circle cx="33" cy="26" r="3"/><path d="M12 12 L18 5 H30 L36 12"/></svg>
+            <div>
+              <div style="font-weight:700; color:var(--cream); font-family:var(--font-display); text-transform:uppercase; letter-spacing:.02em;">Toyota Corolla</div>
+              <div style="font-size:.78rem; color:#A9B0BC;">Economy · Automatic</div>
+            </div>
+          </div>
+
+          <dl>
+            <dt>Pickup</dt>
+            <dd>Kathmandu</dd>
+            <dt>Pickup date</dt>
+            <dd>Jul 14, 2026</dd>
+            <dt>Return date</dt>
+            <dd>Jul 17, 2026</dd>
+            <dt>Rental length</dt>
+            <dd>3 days</dd>
+            <dt>Daily rate</dt>
+            <dd>$45.00</dd>
+            <dt>Insurance &amp; fees</dt>
+            <dd>$0.00</dd>
+            <dt class="total">Total due</dt>
+            <dd class="total">$135.00</dd>
+          </dl>
+        </div>
+
+        <div class="filter-box">
+          <h4>Free cancellation</h4>
+          <p style="color:var(--ink-soft); font-size:.88rem;">Cancel or change this booking free of charge up to 24 hours before pickup.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Renta Car Rentals. All rights reserved.</span>
+      <span>Privacy · Terms · Support</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
