@@ -272,7 +272,7 @@ p.lede { color: var(--ink-soft); font-size: 1.1rem; max-width: 46ch; }
   display: grid;
   grid-template-columns: repeat(3, 1fr) auto;
   gap: 16px;
-  margin-top: 0;
+  margin-top: -64px;
   position: relative;
   z-index: 5;
 }
