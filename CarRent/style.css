@@ -206,7 +206,7 @@ p.lede { color: var(--ink-soft); font-size: 1.1rem; max-width: 46ch; }
 .hero {
   background: var(--asphalt);
   color: var(--cream);
-  padding-block: 64px 90px;
+  padding-block: 64px 56px;
   position: relative;
   overflow: hidden;
 }
@@ -245,6 +245,24 @@ p.lede { color: var(--ink-soft); font-size: 1.1rem; max-width: 46ch; }
   50% { transform: translateY(-8px); }
 }
 
+.road-car {
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  width: 70px;
+  z-index: 2;
+  animation: drive-across 7s linear infinite;
+  will-change: transform;
+}
+.road-car svg { width: 100%; display: block; filter: drop-shadow(0 3px 3px rgba(0,0,0,.35)); }
+@keyframes drive-across {
+  0%   { transform: translateX(-90px); }
+  100% { transform: translateX(105vw); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .road-car { animation: none; left: 40%; }
+}
+
 /* ---------- Search / Filter card ---------- */
 .search-card {
   background: var(--paper);
@@ -254,7 +272,7 @@ p.lede { color: var(--ink-soft); font-size: 1.1rem; max-width: 46ch; }
   display: grid;
   grid-template-columns: repeat(3, 1fr) auto;
   gap: 16px;
-  margin-top: -46px;
+  margin-top: 0;
   position: relative;
   z-index: 5;
 }

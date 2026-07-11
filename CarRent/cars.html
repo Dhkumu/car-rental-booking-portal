@@ -40,10 +40,11 @@
 <section>
   <div class="container booking-shell">
     <aside>
+      <form id="car-filters">
       <div class="filter-box">
         <h4>Vehicle type</h4>
         <div class="chip-select">
-          <label><input type="checkbox" name="type" value="economy" checked> Economy</label>
+          <label><input type="checkbox" name="type" value="economy"> Economy</label>
           <label><input type="checkbox" name="type" value="suv"> SUV</label>
           <label><input type="checkbox" name="type" value="luxury"> Luxury</label>
           <label><input type="checkbox" name="type" value="van"> Van</label>
@@ -51,30 +52,34 @@
       </div>
       <div class="filter-box">
         <h4>Seats</h4>
-        <div class="filter-option"><input type="radio" name="seats" id="seats-any" checked><label for="seats-any">Any</label></div>
-        <div class="filter-option"><input type="radio" name="seats" id="seats-4"><label for="seats-4">4 seats</label></div>
-        <div class="filter-option"><input type="radio" name="seats" id="seats-5"><label for="seats-5">5 seats</label></div>
-        <div class="filter-option"><input type="radio" name="seats" id="seats-7"><label for="seats-7">7+ seats</label></div>
+        <div class="filter-option"><input type="radio" name="seats" id="seats-any" value="any" checked><label for="seats-any">Any</label></div>
+        <div class="filter-option"><input type="radio" name="seats" id="seats-4" value="4"><label for="seats-4">4 seats</label></div>
+        <div class="filter-option"><input type="radio" name="seats" id="seats-5" value="5"><label for="seats-5">5 seats</label></div>
+        <div class="filter-option"><input type="radio" name="seats" id="seats-7" value="7"><label for="seats-7">7+ seats</label></div>
       </div>
       <div class="filter-box">
         <h4>Fuel type</h4>
-        <div class="filter-option"><input type="checkbox" id="fuel-petrol" checked><label for="fuel-petrol">Petrol</label></div>
-        <div class="filter-option"><input type="checkbox" id="fuel-diesel"><label for="fuel-diesel">Diesel</label></div>
-        <div class="filter-option"><input type="checkbox" id="fuel-hybrid"><label for="fuel-hybrid">Hybrid</label></div>
-        <div class="filter-option"><input type="checkbox" id="fuel-electric"><label for="fuel-electric">Electric</label></div>
+        <div class="filter-option"><input type="checkbox" name="fuel" value="petrol" id="fuel-petrol"><label for="fuel-petrol">Petrol</label></div>
+        <div class="filter-option"><input type="checkbox" name="fuel" value="diesel" id="fuel-diesel"><label for="fuel-diesel">Diesel</label></div>
+        <div class="filter-option"><input type="checkbox" name="fuel" value="hybrid" id="fuel-hybrid"><label for="fuel-hybrid">Hybrid</label></div>
+        <div class="filter-option"><input type="checkbox" name="fuel" value="electric" id="fuel-electric"><label for="fuel-electric">Electric</label></div>
       </div>
       <div class="filter-box">
         <h4>Max price / day</h4>
         <input type="range" min="20" max="150" value="90" id="price-range" style="width:100%;">
         <div class="range-value">Up to $<span id="price-range-val">90</span> / day</div>
       </div>
-      <button class="btn btn-dark btn-block">Apply filters</button>
+      <button type="submit" class="btn btn-dark btn-block">Apply filters</button>
+      <button type="button" id="reset-filters" class="btn btn-outline btn-block" style="margin-top:10px;">Reset filters</button>
+      </form>
     </aside>
 
     <div>
-      <div class="car-grid">
+      <p id="results-count" style="font-family:var(--font-mono); font-size:.82rem; color:var(--ink-soft); margin-bottom:16px;"></p>
 
-        <article class="car-card">
+      <div class="car-grid" id="car-grid">
+
+        <article class="car-card" data-type="economy" data-seats="5" data-fuel="petrol" data-price="45">
           <figure><svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="12" width="36" height="12" rx="4"/><circle cx="15" cy="26" r="3"/><circle cx="33" cy="26" r="3"/><path d="M12 12 L18 5 H30 L36 12"/></svg></figure>
           <div class="body">
             <div class="row"><h3>Toyota Corolla</h3><span class="price">$45<small>/day</small></span></div>
@@ -83,7 +88,7 @@
           </div>
         </article>
 
-        <article class="car-card">
+        <article class="car-card" data-type="suv" data-seats="5" data-fuel="hybrid" data-price="68">
           <figure><svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="9" width="40" height="15" rx="4"/><circle cx="14" cy="26" r="3"/><circle cx="34" cy="26" r="3"/><path d="M10 9 L14 3 H34 L38 9"/></svg></figure>
           <div class="body">
             <div class="row"><h3>Honda CR-V</h3><span class="price">$68<small>/day</small></span></div>
@@ -92,7 +97,7 @@
           </div>
         </article>
 
-        <article class="car-card">
+        <article class="car-card" data-type="luxury" data-seats="5" data-fuel="petrol" data-price="92">
           <figure><svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="13" width="38" height="10" rx="5"/><circle cx="15" cy="26" r="3"/><circle cx="33" cy="26" r="3"/><path d="M12 13 L20 6 H28 L36 13"/></svg></figure>
           <div class="body">
             <div class="row"><h3>BMW 5 Series</h3><span class="price">$92<small>/day</small></span></div>
@@ -101,7 +106,7 @@
           </div>
         </article>
 
-        <article class="car-card">
+        <article class="car-card" data-type="van" data-seats="7" data-fuel="diesel" data-price="78">
           <figure><svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="6" width="40" height="18" rx="3"/><circle cx="14" cy="26" r="3"/><circle cx="34" cy="26" r="3"/><line x1="24" y1="6" x2="24" y2="24"/></svg></figure>
           <div class="body">
             <div class="row"><h3>Toyota Hiace Van</h3><span class="price">$78<small>/day</small></span></div>
@@ -110,7 +115,7 @@
           </div>
         </article>
 
-        <article class="car-card">
+        <article class="car-card" data-type="economy" data-seats="4" data-fuel="petrol" data-price="38">
           <figure><svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="12" width="36" height="12" rx="4"/><circle cx="15" cy="26" r="3"/><circle cx="33" cy="26" r="3"/><path d="M12 12 L18 5 H30 L36 12"/></svg></figure>
           <div class="body">
             <div class="row"><h3>Hyundai i10</h3><span class="price">$38<small>/day</small></span></div>
@@ -119,7 +124,7 @@
           </div>
         </article>
 
-        <article class="car-card">
+        <article class="car-card" data-type="suv" data-seats="5" data-fuel="diesel" data-price="71">
           <figure><svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="9" width="40" height="15" rx="4"/><circle cx="14" cy="26" r="3"/><circle cx="34" cy="26" r="3"/><path d="M10 9 L14 3 H34 L38 9"/></svg></figure>
           <div class="body">
             <div class="row"><h3>Jeep Compass</h3><span class="price">$71<small>/day</small></span></div>
@@ -129,6 +134,10 @@
         </article>
 
       </div>
+
+      <p id="no-results" style="display:none; font-family:var(--font-mono); color:var(--ink-soft); padding:40px 0; text-align:center;">
+        No cars match those filters — try widening your search.
+      </p>
     </div>
   </div>
 </section>

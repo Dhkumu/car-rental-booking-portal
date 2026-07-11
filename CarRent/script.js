@@ -106,6 +106,77 @@ document.addEventListener('DOMContentLoaded', function () {
     requestAnimationFrame(step);
   });
 
+  /* ---------- Car listing filters (cars.html) ---------- */
+  var filterForm = document.getElementById('car-filters');
+  var carGrid = document.getElementById('car-grid');
+  var priceRange = document.getElementById('price-range');
+  var resetBtn = document.getElementById('reset-filters');
+  var resultsCount = document.getElementById('results-count');
+  var noResults = document.getElementById('no-results');
+
+  function applyCarFilters() {
+    if (!filterForm || !carGrid) return;
+
+    var checkedTypes = Array.prototype.map.call(
+      filterForm.querySelectorAll('input[name="type"]:checked'),
+      function (el) { return el.value; }
+    );
+    var checkedFuels = Array.prototype.map.call(
+      filterForm.querySelectorAll('input[name="fuel"]:checked'),
+      function (el) { return el.value; }
+    );
+    var seatsChoice = filterForm.querySelector('input[name="seats"]:checked');
+    var seatsValue = seatsChoice ? seatsChoice.value : 'any';
+    var maxPrice = priceRange ? parseFloat(priceRange.value) : Infinity;
+
+    var cards = carGrid.querySelectorAll('.car-card');
+    var visibleCount = 0;
+
+    cards.forEach(function (card) {
+      var type = card.dataset.type;
+      var fuel = card.dataset.fuel;
+      var seats = parseInt(card.dataset.seats, 10);
+      var price = parseFloat(card.dataset.price);
+
+      var typeOk = checkedTypes.length === 0 || checkedTypes.indexOf(type) !== -1;
+      var fuelOk = checkedFuels.length === 0 || checkedFuels.indexOf(fuel) !== -1;
+      var seatsOk = seatsValue === 'any' ||
+        (seatsValue === '7' ? seats >= 7 : seats === parseInt(seatsValue, 10));
+      var priceOk = isNaN(maxPrice) || price <= maxPrice;
+
+      var show = typeOk && fuelOk && seatsOk && priceOk;
+      card.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
+    });
+
+    if (resultsCount) {
+      resultsCount.textContent = visibleCount + (visibleCount === 1 ? ' car matches your filters' : ' cars match your filters');
+    }
+    if (noResults) {
+      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  }
+
+  if (filterForm) {
+    filterForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      applyCarFilters();
+    });
+  }
+  if (resetBtn && filterForm) {
+    resetBtn.addEventListener('click', function () {
+      filterForm.reset();
+      if (priceRange) {
+        priceRange.value = priceRange.max || 150;
+        var priceOut = document.getElementById('price-range-val');
+        if (priceOut) priceOut.textContent = priceRange.value;
+      }
+      applyCarFilters();
+    });
+  }
+  // Run once on page load so the count/empty-state reflect the unfiltered list
+  if (carGrid) applyCarFilters();
+
   /* ---------- Payment method toggling card fields ---------- */
   var payRadios = document.querySelectorAll('input[name="payment-method"]');
   var cardBlock = document.getElementById('card-details');
